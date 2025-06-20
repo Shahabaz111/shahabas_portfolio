@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Explore | Shahabas</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="explore-page">
+  <h1>Welcome</h1>
+  <p>This is the digital universe of Muhammad Shahabas Riyas</p>
+  <a href="#" class="button-primary explore-btn">EXPLORE</a>
+
+  <script>
+    document.querySelector('.explore-btn').addEventListener('click', function(e) {
+      e.preventDefault();
+      document.body.classList.add('zoom-out');
+      setTimeout(() => {
+        window.location.href = 'home.html';
+      }, 600);
+    });
+  </script>
+</body>
+</html>
