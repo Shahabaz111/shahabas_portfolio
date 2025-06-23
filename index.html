@@ -16,7 +16,7 @@
     .container {
       display: flex;
       flex-wrap: wrap;
-      height: 100vh;
+      min-height: 100vh;
       align-items: center;
       justify-content: center;
       padding: 20px;
@@ -24,20 +24,27 @@
       transition: opacity 0.6s ease;
     }
     .left, .right {
-      flex: 1 1 100%;
-      max-width: 100%;
-      text-align: center;
-      margin-bottom: 30px;
+      flex: 1;
+      max-width: 50%;
+      text-align: left;
+    }
+    .left {
+      padding-right: 40px;
+    }
+    .right {
+      display: flex;
+      justify-content: center;
+      align-items: center;
     }
     .left h1 {
-      font-size: 2.5rem;
+      font-size: 3rem;
       background: linear-gradient(to right, #4e54c8, #8f94fb);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
       margin: 0 0 20px;
     }
     .left p {
-      font-size: 1.1rem;
+      font-size: 1.2rem;
       margin-bottom: 20px;
       color: #ccc;
     }
@@ -56,8 +63,8 @@
       background-color: #3b40a0;
     }
     .right img.profile {
-      width: 240px;
-      height: 240px;
+      width: 280px;
+      height: 280px;
       object-fit: cover;
       object-position: center;
       border-radius: 50%;
@@ -114,6 +121,56 @@
     }
     .social a:hover {
       color: #fff;
+    }
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        padding-top: 80px;
+      }
+      .left, .right {
+        max-width: 100%;
+        flex: 1 1 100%;
+        text-align: center;
+        padding: 0 20px;
+      }
+      .left {
+        margin-bottom: 30px;
+      }
+      .right img.profile {
+        width: 160px;
+        height: 160px;
+        margin-bottom: 20px;
+      }
+      .left h1 {
+        font-size: 2rem;
+      }
+      .left p {
+        font-size: 1rem;
+      }
+      .explore-btn {
+        padding: 10px 20px;
+        font-size: 0.95rem;
+      }
+      nav {
+        top: 10px;
+        right: 10px;
+      }
+    }
+      .left {
+        margin-bottom: 30px;
+      }
+      .container {
+        padding-top: 80px;
+        flex-direction: column;
+      }
+      .right img.profile {
+        width: 200px;
+        height: 200px;
+      }
+      nav {
+        top: 10px;
+        right: 10px;
+      }
     }
   </style>
 </head>
