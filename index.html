@@ -1,20 +1,163 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Explore | Shahabas</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MSR Portfolio | Landing</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Poppins', sans-serif;
+      background: url('background.jpg') no-repeat center center/cover;
+      color: #ffffff;
+      overflow-x: hidden;
+    }
+    .container {
+      display: flex;
+      height: 100vh;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 5%;
+      position: relative;
+      transition: opacity 0.6s ease;
+    }
+    .left {
+      flex: 1;
+      max-width: 50%;
+    }
+    .left h1 {
+      font-size: 3.5rem;
+      background: linear-gradient(to right, #4e54c8, #8f94fb);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin: 0 0 20px;
+    }
+    .left p {
+      font-size: 1.2rem;
+      max-width: 500px;
+      margin-bottom: 30px;
+      color: #ccc;
+    }
+    .explore-btn {
+      padding: 14px 30px;
+      font-size: 1rem;
+      background-color: #4e54c8;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.3s ease;
+    }
+    .explore-btn:hover {
+      background-color: #3b40a0;
+    }
+    .right {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .right img.profile {
+      width: 340px;
+      height: 340px;
+      object-fit: cover;
+      object-position: center;
+      border-radius: 50%;
+      box-shadow: 0 0 40px rgba(0, 0, 0, 0.6);
+    }
+    .logo {
+      position: absolute;
+      top: 30px;
+      left: 30px;
+      width: 80px;
+      z-index: 2;
+    }
+    nav {
+      position: absolute;
+      top: 20px;
+      right: 50px;
+    }
+    nav a {
+      margin-left: 25px;
+      color: #ccc;
+      text-decoration: none;
+      font-weight: 500;
+      font-size: 1rem;
+      transition: color 0.3s;
+    }
+    nav a:hover {
+      color: #fff;
+    }
+    .fade-out {
+      opacity: 0;
+    }
+    section {
+      padding: 100px 5%;
+      background-color: #111;
+      color: #eee;
+    }
+    section h2 {
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+    section p {
+      font-size: 1.1rem;
+      max-width: 800px;
+    }
+    .social {
+      margin-top: 10px;
+    }
+    .social a {
+      color: #ccc;
+      text-decoration: none;
+      margin-right: 15px;
+      transition: color 0.3s ease;
+    }
+    .social a:hover {
+      color: #fff;
+    }
+  </style>
 </head>
-<body class="explore-page">
-  <h1>Welcome</h1>
-  <p>This is the digital universe of Muhammad Shahabas Riyas</p>
-  <a href="#" class="button-primary explore-btn">EXPLORE</a>
+<body>
+  <div class="container" id="landing">
+    <img src="Asset 7@4x.png" alt="Logo" class="logo" />
+    <nav>
+      <a href="#about">About</a>
+      <a href="#projects">Projects</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="left">
+      <h1>Muhammad Shahabas Riyas</h1>
+      <p>Graphic Designer & 3D Artist blending design and motion to tell unforgettable stories.</p>
+      <a href="#" class="explore-btn" id="exploreBtn">Explore</a>
+    </div>
+    <div class="right">
+      <img src="IMG_0224.jpg" alt="Profile" class="profile" />
+    </div>
+  </div>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>I’m Muhammad Shahabas Riyas, a passionate and detail-oriented Graphic Designer & 3D Artist. I specialize in transforming raw ideas into visual narratives that communicate clearly and beautifully. With a Diploma in Multimedia and Animation and hands-on experience using Adobe Creative Suite, Blender, and more, I bring creative problem-solving and a storyteller’s mindset to every project. Whether it’s a slick brand identity or immersive 3D visuals, I’m always exploring new creative boundaries while keeping functionality at the core of my work.</p>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:shahabasbinriyas@gmail.com">shahabasbinriyas@gmail.com</a></p>
+    <p>Phone: <a href="tel:+918606395362">+91 8606 395362</a></p>
+    <div class="social">
+      <p>Instagram: <a href="https://instagram.com/shahabaz_bin_riyas" target="_blank">@shahabaz_bin_riyas</a></p>
+    </div>
+  </section>
 
   <script>
-    document.querySelector('.explore-btn').addEventListener('click', function(e) {
+    const btn = document.getElementById('exploreBtn');
+    const landing = document.getElementById('landing');
+    btn.addEventListener('click', (e) => {
       e.preventDefault();
-      document.body.classList.add('zoom-out');
+      landing.classList.add('fade-out');
       setTimeout(() => {
         window.location.href = 'home.html';
       }, 600);
@@ -22,3 +165,4 @@
   </script>
 </body>
 </html>
+
